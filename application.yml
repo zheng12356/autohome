@@ -1,0 +1,14 @@
+spring: 
+    profiles: 
+        active:
+           - dev
+---
+spring:
+    profiles: dev
+    application:
+        name: autohome-config-server-dev
+---
+spring:
+    profiles: test
+    application:
+        name: autohome-config-server-test
