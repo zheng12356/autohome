@@ -3,6 +3,8 @@ spring:
     active:
       - dev
 
+---
+
 server:
   port: 6001
 
@@ -32,9 +34,10 @@ info:
   company: 理想IT
   author: zheng
   version: 1.1.1
-  
-  
-  
+
+
+---
+
 server:
   port: 6002
 
@@ -64,4 +67,3 @@ info:
   company: 理想IT
   author: zheng
   version: 1.1.1
-
