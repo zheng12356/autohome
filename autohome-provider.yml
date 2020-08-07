@@ -1,0 +1,67 @@
+spring:
+  profiles:
+    active:
+      - dev
+
+server:
+  port: 6001
+
+mybatis:
+  type-aliases-package: com.znsd.car.api.model
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      username: root
+      password: root
+      url: jdbc:mysql://localhost:3306/autohome01?useUnicode=true&characterEncoding=UTF-8
+  application:
+    name: autohome-provider #spring 应用名称
+
+eureka:
+  client:
+    register-with-eureka: true  #将自己作为一个服务注册到 eureka 注册中心
+    service-url:
+      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/,http://eureka8003.com:8003/eureka/  #配置 eureka 服务的 url 注册中心地址
+  instance:
+    instance-id: autohome-provider-6001 #在 eureka 注册中心的实例名称
+    prefer-ip-address: true #显示服务的 ip 地址
+
+info:
+  company: 理想IT
+  author: zheng
+  version: 1.1.1
+  
+  
+  
+server:
+  port: 6002
+
+mybatis:
+  type-aliases-package: com.znsd.car.api.model
+spring:
+  profiles: test
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      username: root
+      password: root
+      url: jdbc:mysql://localhost:3306/autohome01?useUnicode=true&characterEncoding=UTF-8
+  application:
+    name: autohome-provider #spring 应用名称
+
+eureka:
+  client:
+    register-with-eureka: true  #将自己作为一个服务注册到 eureka 注册中心
+    service-url:
+      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/,http://eureka8003.com:8003/eureka/  #配置 eureka 服务的 url 注册中心地址
+  instance:
+    instance-id: autohome-provider-6002 #在 eureka 注册中心的实例名称
+    prefer-ip-address: true #显示服务的 ip 地址
+
+info:
+  company: 理想IT
+  author: zheng
+  version: 1.1.1
+
